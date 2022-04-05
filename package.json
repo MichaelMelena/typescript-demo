@@ -1,0 +1,25 @@
+{
+  "name": "typescript-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {"url": "https://github.com/MichaelMelena/typescript-demo.git"},
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css-compile" : "sass src/scss:docs/css",
+    "css-watch" : "sass src/scss:docs/css --watch --color"
+  },
+  "keywords": [
+    "typescript",
+    "html",
+    "scss"
+  ],
+  "author": "Michael Melena",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.49.11"
+  }
+}
