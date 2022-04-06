@@ -1,3 +1,5 @@
+import SayHello from "./second-file.js";
+
 function FetchWords(): Promise<string[]>
 {
 
@@ -50,6 +52,7 @@ function onGenerateButtonClick(event: MouseEvent): void
 
 window.addEventListener('load', () =>
 {
+    SayHello();
     const btnGenerate = document.getElementById('btn-generate');
     btnGenerate?.addEventListener('click', onGenerateButtonClick);
 });

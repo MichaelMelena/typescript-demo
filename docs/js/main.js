@@ -1,4 +1,4 @@
-"use strict";
+import SayHello from "./second-file.js";
 function FetchWords() {
     let promise = new Promise((resolve, reject) => {
         const url = "./data/english.txt";
@@ -34,6 +34,7 @@ function onGenerateButtonClick(event) {
     console.log(result);
 }
 window.addEventListener('load', () => {
+    SayHello();
     const btnGenerate = document.getElementById('btn-generate');
     btnGenerate === null || btnGenerate === void 0 ? void 0 : btnGenerate.addEventListener('click', onGenerateButtonClick);
 });
