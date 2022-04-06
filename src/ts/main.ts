@@ -1,7 +1,7 @@
 function FetchWords(): Promise<string[]>
 {
 
-    let promise = new Promise<string[]>((resolve, reject) =>
+    let promise = new Promise<string[]>((resolve: CallableFunction, reject: CallableFunction) =>
     {
         const url: string = "./data/english.txt";
         const httpRequest = new XMLHttpRequest();
@@ -28,7 +28,9 @@ function FetchWords(): Promise<string[]>
     return promise;
 }
 
-const words: string[] = await FetchWords();
+let words: string[] = [];
+
+FetchWords().then((fetchedWords) => words = fetchedWords);
 
 function getRandomWord(): string
 {
@@ -40,15 +42,14 @@ function getRandomWord(): string
 
 function onGenerateButtonClick(event: MouseEvent): void
 {
+    console.log('clicked');
     const word = getRandomWord();
-    const result = `${word}-chan`;
+    const result = `${word}`;
     console.log(result);
 }
 
 window.addEventListener('load', () =>
 {
-    const btnGenerate = document.getElementById('generate-btn');
+    const btnGenerate = document.getElementById('btn-generate');
     btnGenerate?.addEventListener('click', onGenerateButtonClick);
 });
-
-export { };
